@@ -1,6 +1,7 @@
 import Document, {
   Html,
   Main,
+  Head,
   NextScript,
   DocumentContext,
   DocumentInitialProps,
@@ -16,6 +17,7 @@ class RootDocument extends Document {
   render(): JSX.Element {
     return (
       <Html lang="fi">
+        <Head></Head>
         <body>
           <Main />
           <NextScript />
