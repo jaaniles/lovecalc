@@ -17,7 +17,9 @@ class RootDocument extends Document {
   render(): JSX.Element {
     return (
       <Html lang="fi">
-        <Head></Head>
+        <Head>
+          <title>Next.js Boilerplate</title>
+        </Head>
         <body>
           <Main />
           <NextScript />

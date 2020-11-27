@@ -1,4 +1,4 @@
-# Audiovisuaali Next.JS Boilerplate
+# Next.JS Boilerplate
 
 Next.js boilerplate with React 17, emotion, react-query and typescript
 
