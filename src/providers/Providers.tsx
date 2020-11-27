@@ -1,11 +1,12 @@
 import { FC, ReactNode } from "react";
 
-import { QueryCacheProvider } from "./QueryCacheProvider";
-
-import { DarkModeProvider } from "~/providers/DarkModeProvider";
-import { IntlProvider } from "~/providers/IntlProvider";
-import { LocaleProvider } from "~/providers/LocaleProvider";
-import { ThemeProvider } from "~/providers/ThemeProvider";
+import {
+  QueryCacheProvider,
+  DarkModeProvider,
+  IntlProvider,
+  LocaleProvider,
+  ThemeProvider,
+} from "~/providers";
 
 // Top to bottom
 const providers = [
