@@ -1,0 +1,11 @@
+{
+  "defaultMessages.submit": "Submit",
+  "languages.en": "English",
+  "languages.fi": "Finnish",
+  "pages.genericError.title": "Something went wrong",
+  "pages.index.input.placeholder": "all",
+  "pages.index.subreddit": "Subreddit",
+  "pages.index.subredditRequired": "Subreddit is required",
+  "pages.index.title": "Go to subreddit",
+  "pages.r.title": "Top posts from reddit"
+}

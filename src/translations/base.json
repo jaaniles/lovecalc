@@ -1,0 +1,29 @@
+{
+  "defaultMessages.submit": {
+    "defaultMessage": "Submit"
+  },
+  "languages.en": {
+    "defaultMessage": "English"
+  },
+  "languages.fi": {
+    "defaultMessage": "Finnish"
+  },
+  "pages.genericError.title": {
+    "defaultMessage": "Something went wrong"
+  },
+  "pages.index.input.placeholder": {
+    "defaultMessage": "all"
+  },
+  "pages.index.subreddit": {
+    "defaultMessage": "Subreddit"
+  },
+  "pages.index.subredditRequired": {
+    "defaultMessage": "Subreddit is required"
+  },
+  "pages.index.title": {
+    "defaultMessage": "Go to subreddit"
+  },
+  "pages.r.title": {
+    "defaultMessage": "Top posts from reddit"
+  }
+}

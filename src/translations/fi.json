@@ -1,0 +1,11 @@
+{
+  "defaultMessages.submit": "Lähetä",
+  "languages.en": "Englanti",
+  "languages.fi": "Suomi",
+  "pages.genericError.title": "Virhe",
+  "pages.index.input.placeholder": "all",
+  "pages.index.subreddit": "Subreddit",
+  "pages.index.subredditRequired": "Subreddit on vaadittu",
+  "pages.index.title": "Subreddit",
+  "pages.r.title": "Subreddit"
+}

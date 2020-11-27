@@ -1,0 +1,28 @@
+name: CI
+on: [push]
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    container: node:15
+
+    steps:
+    - uses: actions/checkout@v1
+
+    - name: Install dependencies
+      run: yarn install --frozen-lockfile
+    
+    - name: Check translations
+      run: yarn validate-messages
+    
+    - name: Typecheck
+      run: yarn tsc
+    
+    - name: Lint
+      run: yarn lint
+    
+    - name: Test
+      run: yarn test
+
+    - name: Build
+      run: yarn build

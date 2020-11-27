@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Check Locale 1`] = `
+Object {
+  "EN": "en",
+  "FI": "fi",
+}
+`;
+
+exports[`Check locales 1`] = `
+Array [
+  "fi",
+  "en",
+]
+`;
