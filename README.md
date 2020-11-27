@@ -7,7 +7,7 @@ Next.js boilerplate with React 17, emotion, react-query and typescript
 #### ENSURE YOU HAVE THE FOLLOWING
 
 - Node 15
-- Typescript ^4.1.2 (Projact has this dependency) for React 17
+- Typescript ^4.1.2 (Project has this dependency) for React 17
 - Use Typescript of this project (bottom right and change typescript version to the one in this project)
 - Read section `Developing project` below
 
