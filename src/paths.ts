@@ -1,4 +1,5 @@
 import { useRouter } from "next/router";
+import { ParsedUrlQuery } from "querystring";
 
 export type HrefOnly = {
   href: string;
@@ -9,10 +10,10 @@ export type HrefAndAs = {
   as: string;
 };
 
-export const useParams = <T>(): T => {
+export const useParams = <T extends ParsedUrlQuery>(): T => {
   const router = useRouter();
 
-  return (router.query as unknown) as T;
+  return router.query as T;
 };
 
 export const getSubredditPage = (opts: { subreddit: string }): HrefAndAs => ({
