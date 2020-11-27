@@ -1,12 +1,14 @@
 # Audiovisuaali Next.JS Boilerplate
 
+Next.js boilerplate with React 17, emotion, react-query and typescript
+
 ## PLEASE READ / INITIAL SETUP
 
 #### ENSURE YOU HAVE THE FOLLOWING
 
 - Node 15
-- Typescript ^4.1.2 (Projact has this dependency)
-- Use Typescript in this project (bottom right and change typescript version to the one in this project)
+- Typescript ^4.1.2 (Projact has this dependency) for React 17
+- Use Typescript of this project (bottom right and change typescript version to the one in this project)
 - Read section `Developing project` below
 
 ## Developing project
