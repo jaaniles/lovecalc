@@ -6,6 +6,7 @@ import React, {
   useContext,
   useEffect,
   createContext,
+  useCallback,
 } from "react";
 
 import { LocalStorage } from "~/@types/localStorage";
@@ -14,7 +15,7 @@ import { Locale } from "~/@types/locale";
 export const getDefaultLocale = () => {
   const locale = get<Locale>(LocalStorage.LANG);
 
-  if (locale in Locale) {
+  if (Object.values(Locale).includes(locale)) {
     return locale;
   }
 
@@ -30,14 +31,14 @@ export const getDefaultLocale = () => {
   }
 };
 
-const defaultLocale = getDefaultLocale();
+const defaultLocale = Locale.EN;
 
 /**
  * Contexts
  */
 const LocaleContext = createContext<Locale>(defaultLocale);
 
-type ContextStates = React.Dispatch<React.SetStateAction<Locale>> | null;
+type ContextStates = ((newLanguage: Locale) => void) | null;
 const UpdateLocaleContext = createContext<ContextStates>(null);
 
 /**
@@ -61,12 +62,17 @@ export const LocaleProvider: FC = ({ children }) => {
   const [language, setLanguage] = useState<Locale>(defaultLocale);
 
   useEffect(() => {
-    set<Locale>(LocalStorage.LANG, language);
-  }, [language]);
+    setLanguage(getDefaultLocale());
+  }, []);
+
+  const handleLanguageChange = useCallback((newLanguage: Locale) => {
+    set<Locale>(LocalStorage.LANG, newLanguage);
+    setLanguage(newLanguage);
+  }, []);
 
   return (
     <LocaleContext.Provider value={language}>
-      <UpdateLocaleContext.Provider value={setLanguage}>
+      <UpdateLocaleContext.Provider value={handleLanguageChange}>
         {children}
       </UpdateLocaleContext.Provider>
     </LocaleContext.Provider>
