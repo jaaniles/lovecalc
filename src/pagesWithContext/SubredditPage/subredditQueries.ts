@@ -1,6 +1,6 @@
 import { api } from "~/api";
 
-export enum SubredditKey {
+export enum SubredditInMemoryKey {
   SUBREDDIT = "subreddit",
 }
 

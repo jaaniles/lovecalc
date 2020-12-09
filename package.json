@@ -48,7 +48,6 @@
     "@babel/preset-typescript": "^7.12.7",
     "@emotion/babel-plugin": "^11.0.0",
     "@formatjs/cli": "^2.13.12",
-    "@types/axios": "^0.14.0",
     "@types/enzyme": "^3.10.8",
     "@types/enzyme-adapter-react-16": "^1.0.6",
     "@types/facepaint": "^1.2.1",

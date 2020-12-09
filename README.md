@@ -29,17 +29,17 @@ Next.js boilerplate with React 17, emotion, react-query and typescript
 ```typescript
 import { api } from "~/api";
 
-export enum CarKey {
+export enum CarInMemoryKey {
   CAR = "car",
 }
 
-type CarInMemoryKey = {
+type Car = {
   title: strig;
   id: number;
 };
 
 type CarResult = {
-  event: EventResponse;
+  cars: Car[];
 };
 
 export const getCar = (opts: { carId: string }) => async () => {
