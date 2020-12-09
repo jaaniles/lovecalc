@@ -27,4 +27,5 @@ class RootDocument extends Document {
   }
 }
 
+// eslint-disable-next-line no-restricted-syntax
 export default RootDocument;

@@ -21,4 +21,5 @@ const App: FC<AppProps> = ({ Component, pageProps }) => (
   </ErrorBoundary>
 );
 
+// eslint-disable-next-line no-restricted-syntax
 export default App;
