@@ -62,14 +62,14 @@ export const DarkModeProvider: FC = ({ children }) => {
     set<boolean>(LocalStorage.DARKMODE, isDarkMode);
   }, [isDarkMode]);
 
-  const handleDarkModeChange = useCallback((newDarkMode: boolean) => {
+  const onDarkModeChange = useCallback((newDarkMode: boolean) => {
     set<boolean>(LocalStorage.LANG, newDarkMode);
     setIsDarkMode(newDarkMode);
   }, []);
 
   return (
     <DarkModeContext.Provider value={isDarkMode}>
-      <UpdateDarkModeContext.Provider value={handleDarkModeChange}>
+      <UpdateDarkModeContext.Provider value={onDarkModeChange}>
         {children}
       </UpdateDarkModeContext.Provider>
     </DarkModeContext.Provider>

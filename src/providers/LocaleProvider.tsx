@@ -65,14 +65,14 @@ export const LocaleProvider: FC = ({ children }) => {
     setLanguage(getDefaultLocale());
   }, []);
 
-  const handleLanguageChange = useCallback((newLanguage: Locale) => {
+  const onLanguageChange = useCallback((newLanguage: Locale) => {
     set<Locale>(LocalStorage.LANG, newLanguage);
     setLanguage(newLanguage);
   }, []);
 
   return (
     <LocaleContext.Provider value={language}>
-      <UpdateLocaleContext.Provider value={handleLanguageChange}>
+      <UpdateLocaleContext.Provider value={onLanguageChange}>
         {children}
       </UpdateLocaleContext.Provider>
     </LocaleContext.Provider>

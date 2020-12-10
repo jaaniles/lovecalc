@@ -102,5 +102,14 @@ module.exports = {
         message: "Prefer named exports",
       },
     ],
+    "react/jsx-handler-names": [
+      2,
+      {
+        eventHandlerPrefix: "handle",
+        eventHandlerPropPrefix: "on",
+        checkLocalVariables: true,
+        checkInlineFunction: true,
+      },
+    ],
   },
 };
