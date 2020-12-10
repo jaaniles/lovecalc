@@ -13,6 +13,7 @@ module.exports = {
   plugins: ["switch-case"],
   parser: "@typescript-eslint/parser",
   rules: {
+    "newline-per-chained-call": ["error", { ignoreChainWithDepth: 3 }],
     "react/react-in-jsx-scope": "off",
     "react/jsx-uses-vars": ["error"],
     "prettier/prettier": ["error", { endOfLine: "auto" }],
