@@ -1,10 +1,10 @@
 import { FC } from "react";
-import { QueryCache, ReactQueryCacheProvider } from "react-query";
+import { QueryClient, QueryClientProvider } from "react-query";
 
-const queryCache = new QueryCache();
+const queryClient = new QueryClient()
 
 export const QueryCacheProvider: FC = ({ children }) => (
-  <ReactQueryCacheProvider queryCache={queryCache}>
+  <QueryClientProvider client={queryClient}>
     {children}
-  </ReactQueryCacheProvider>
+  </QueryClientProvider>
 );

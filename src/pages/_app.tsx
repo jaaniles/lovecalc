@@ -2,9 +2,9 @@ import { Global } from "@emotion/react";
 import { AppProps } from "next/app";
 import Head from "next/head";
 import { FC } from "react";
+import emotionReset from 'emotion-reset';
 
 import { globalStyles } from "~/design";
-import { emotionReset } from "~/emotionReset";
 import { ErrorBoundary } from "~/organisms/ErrorBoundary";
 import { Providers } from "~/providers/Providers";
 
