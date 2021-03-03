@@ -1,5 +1,8 @@
 {
+  "app.head.description": "Boilerplate with a simple reddit searcher",
+  "app.head.title": "Next.js Boilerplate",
   "defaultMessages.submit": "Submit",
+  "head.title.fix": "{title} - Next.js Rest Boilerplate",
   "languages.en": "English",
   "languages.fi": "Finnish",
   "pages.genericError.title": "Something went wrong",
@@ -7,5 +10,7 @@
   "pages.index.subreddit": "Subreddit",
   "pages.index.subredditRequired": "Subreddit is required",
   "pages.index.title": "Go to subreddit",
+  "pages.r.head.description": "View posts in r/{subreddit}",
+  "pages.r.head.title": "r/{subreddit}",
   "pages.r.title": "Top posts from reddit"
 }

@@ -9,6 +9,7 @@ import { PageContent } from "~/atoms/PageContent";
 import { TextField } from "~/atoms/TextField";
 import { H1 } from "~/atoms/typography/H1";
 import { commonMessages } from "~/commonMessages";
+import { HeaderTags } from "~/molecules/HeaderTags";
 import { LanguageSelector } from "~/molecules/LanguageSelector";
 import { getSubredditPage } from "~/paths";
 

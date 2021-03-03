@@ -1,5 +1,8 @@
 {
+  "app.head.description": "Kanalautanen simppelillä reddit hakukoneella",
+  "app.head.title": "Next.js Kanalautanen",
   "defaultMessages.submit": "Lähetä",
+  "head.title.fix": "{title} - Next.js Rest Kanalautanen",
   "languages.en": "Englanti",
   "languages.fi": "Suomi",
   "pages.genericError.title": "Virhe",
@@ -7,5 +10,7 @@
   "pages.index.subreddit": "Subreddit",
   "pages.index.subredditRequired": "Subreddit on vaadittu",
   "pages.index.title": "Subreddit",
+  "pages.r.head.description": "Katso postauksia r/{subreddit}",
+  "pages.r.head.title": "r/{subreddit}",
   "pages.r.title": "Subreddit"
 }
