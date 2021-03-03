@@ -1,3 +1,5 @@
+import { useQuery } from "react-query";
+
 import { api } from "~/api";
 
 export enum SubredditInMemoryKey {
@@ -18,8 +20,14 @@ type RedditFrontPage = {
 };
 
 export const getSubreddit = (opts: { subreddit: string }) => async () => {
-  // In reality this would be `/event/:eventId`
   const { data } = await api.get<RedditFrontPage>(`/r/${opts.subreddit}/.json`);
 
   return data;
 };
+
+export function useSubredditQuery(params: { subreddit: string }) {
+  return useQuery(
+    [SubredditInMemoryKey.SUBREDDIT, params.subreddit],
+    getSubreddit({ subreddit: params.subreddit }),
+  );
+}

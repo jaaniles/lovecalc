@@ -1,8 +1,9 @@
 import { Global } from "@emotion/react";
+import emotionReset from "emotion-reset";
 import { AppProps } from "next/app";
 import Head from "next/head";
-import { FC } from "react";
-import emotionReset from 'emotion-reset';
+import React, { FC } from "react";
+import { Hydrate } from "react-query/hydration";
 
 import { globalStyles } from "~/design";
 import { ErrorBoundary } from "~/organisms/ErrorBoundary";
@@ -14,9 +15,11 @@ const App: FC<AppProps> = ({ Component, pageProps }) => (
       <title>Next.js Boilerplate</title>
     </Head>
     <Providers>
-      <Global styles={emotionReset} />
-      <Global styles={globalStyles} />
-      <Component {...pageProps} />
+      <Hydrate state={pageProps.dehydratedState}>
+        <Global styles={emotionReset} />
+        <Global styles={globalStyles} />
+        <Component {...pageProps} />
+      </Hydrate>
     </Providers>
   </ErrorBoundary>
 );

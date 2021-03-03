@@ -1,8 +1,7 @@
 import React from "react";
 import { defineMessages, FormattedMessage } from "react-intl";
-import { useQuery } from "react-query";
 
-import { getSubreddit, SubredditInMemoryKey } from "./subredditQueries";
+import { useSubredditQuery } from "./subredditQueries";
 
 import { Card } from "~/atoms/Card";
 import { Loading } from "~/atoms/Loading";
@@ -26,10 +25,7 @@ type PageParams = {
 export const SubredditPage = () => {
   const { subreddit } = useParams<PageParams>();
 
-  const { isLoading, data } = useQuery(
-    [SubredditInMemoryKey.SUBREDDIT, subreddit],
-    getSubreddit({ subreddit }),
-  );
+  const { isLoading, data } = useSubredditQuery({ subreddit });
 
   return (
     <PageContent>

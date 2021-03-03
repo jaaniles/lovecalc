@@ -6,7 +6,6 @@ module.exports = {
     "plugin:react/recommended",
     "plugin:switch-case/recommended",
     "plugin:@typescript-eslint/recommended",
-    "prettier/@typescript-eslint",
     "plugin:prettier/recommended",
     "plugin:react-hooks/recommended",
   ],
