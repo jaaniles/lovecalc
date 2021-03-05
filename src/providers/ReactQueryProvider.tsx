@@ -3,13 +3,10 @@ import { QueryClient, QueryClientProvider } from "react-query";
 
 const queryClient = new QueryClient({
   defaultOptions: {
-    queries: {
-      staleTime: Infinity,
-      refetchInterval: 900000, // 15 min
-    },
+    queries: { staleTime: Infinity },
   },
 });
 
-export const QueryCacheProvider: FC = ({ children }) => (
+export const ReactQueryProvider: FC = ({ children }) => (
   <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
 );

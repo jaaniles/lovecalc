@@ -1,7 +1,7 @@
 import { FC, ReactNode } from "react";
 
 import {
-  QueryCacheProvider,
+  ReactQueryProvider,
   DarkModeProvider,
   IntlProvider,
   LocaleProvider,
@@ -10,7 +10,7 @@ import {
 
 // Top to bottom
 const providers = [
-  QueryCacheProvider,
+  ReactQueryProvider,
   LocaleProvider,
   DarkModeProvider,
   IntlProvider,
