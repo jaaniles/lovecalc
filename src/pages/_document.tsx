@@ -8,9 +8,12 @@ import Document, {
 } from "next/document";
 
 class RootDocument extends Document {
-  static async getInitialProps(ctx: DocumentContext): Promise<DocumentInitialProps> {
-    const initialProps = await Document.getInitialProps(ctx)
-    return { ...initialProps }
+  static async getInitialProps(
+    ctx: DocumentContext,
+  ): Promise<DocumentInitialProps> {
+    const initialProps = await Document.getInitialProps(ctx);
+
+    return { ...initialProps };
   }
 
   render(): JSX.Element {
