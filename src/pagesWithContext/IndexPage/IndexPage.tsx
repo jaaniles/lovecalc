@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useRouter } from "next/router";
 import React, { FC, useCallback } from "react";
 import { useForm } from "react-hook-form";
@@ -5,10 +6,12 @@ import { FormattedMessage, useIntl, defineMessages } from "react-intl";
 
 import { Button } from "~/atoms/Button";
 import { Column } from "~/atoms/Column";
+import { Icon } from "~/atoms/Icon";
 import { PageContent } from "~/atoms/PageContent";
 import { TextField } from "~/atoms/TextField";
 import { H1 } from "~/atoms/typography/H1";
 import { commonMessages } from "~/commonMessages";
+import { scale } from "~/design";
 import { LanguageSelector } from "~/molecules/LanguageSelector";
 import { getSubredditPage } from "~/paths";
 
@@ -62,8 +65,24 @@ export const IndexPage: FC = () => {
           })}
           onSubmit={handleSubmit(onSubmit)}
         >
+          <div
+            css={{
+              maxWidth: scale(40),
+              margin: "0 auto",
+              marginBottom: scale(14),
+            }}
+          >
+            <Image
+              src="/logo-fraktio-transparent.png"
+              alt="Fraktio"
+              layout="intrinsic"
+              width={792}
+              height={213}
+            />
+          </div>
           <H1 css={({ scale }) => ({ marginBottom: scale(6) })}>
             <FormattedMessage {...messages.title} />
+            <Icon name="camera" />
           </H1>
 
           <TextField

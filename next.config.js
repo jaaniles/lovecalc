@@ -9,9 +9,6 @@ module.exports = withPlugins(
     [
       optimizedImages,
       {
-        responsive: {
-          adapter: require("responsive-loader/sharp"),
-        },
         svgo: {
           plugins: [{ removeViewBox: false }],
         },
