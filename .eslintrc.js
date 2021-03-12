@@ -45,6 +45,7 @@ module.exports = {
     "@typescript-eslint/no-unused-vars": ["error", { varsIgnorePattern: "^_" }],
     "@typescript-eslint/explicit-module-boundary-types": 0,
     "import/newline-after-import": ["error", { count: 1 }],
+    "import/no-relative-parent-imports": "error",
     "import/order": [
       "error",
       {
