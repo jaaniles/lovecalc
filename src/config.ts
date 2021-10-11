@@ -1,4 +1,4 @@
-const requireEnv = (env: string | undefined): string => {
+export const requireEnv = (env: string | undefined): string => {
   if (!env) {
     throw new Error("Environment variable is missing!");
   }
@@ -6,6 +6,4 @@ const requireEnv = (env: string | undefined): string => {
   return env;
 };
 
-export const config = {
-  apiEndpoint: requireEnv(process.env.NEXT_PUBLIC_API_ENDPOINT),
-};
+export const config = {};
