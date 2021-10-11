@@ -1,10 +1,16 @@
 import { calculateLoveWithFraktio } from "./levenshtein";
 import { loveModulo } from "./loveModulo";
 import { loveVowel } from "./loveVowel";
+import { peppesLoveFn } from "./peppesLoveFn";
 
 export type LoveFN = (params: { name: string }) => number;
 
-const loveFuncs: LoveFN[] = [loveModulo, calculateLoveWithFraktio, loveVowel];
+const loveFuncs: LoveFN[] = [
+  loveModulo,
+  calculateLoveWithFraktio,
+  loveVowel,
+  peppesLoveFn,
+];
 
 const clamp = (params: { min: number; max: number; value: number }): number =>
   Math.min(Math.max(params.value, params.min), params.max);
