@@ -6,4 +6,6 @@ export const requireEnv = (env: string | undefined): string => {
   return env;
 };
 
-export const config = {};
+export const config = {
+  apiEndpoint: "",
+};
