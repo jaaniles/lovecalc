@@ -1,5 +1,10 @@
 import styled from "@emotion/styled";
-import { ReactNode, forwardRef } from "react";
+import {
+  ReactNode,
+  forwardRef,
+  DetailedHTMLProps,
+  InputHTMLAttributes,
+} from "react";
 
 import { ErrorText } from "~/atoms/ErrorText";
 import { Label } from "~/atoms/typography/Label";
@@ -32,7 +37,11 @@ export const StyledTextInput = styled.input<InputProps>(
     },
 );
 
-interface Props {
+interface Props
+  extends DetailedHTMLProps<
+    InputHTMLAttributes<HTMLInputElement>,
+    HTMLInputElement
+  > {
   id: string;
   type?: "text" | "tel" | "email" | "password" | "number";
   error?: ReactNode;
@@ -44,7 +53,17 @@ interface Props {
 }
 
 export const TextField = forwardRef<HTMLInputElement, Props>(function TextField(
-  { type = "text", error, label, name, placeholder, required, disabled, id },
+  {
+    type = "text",
+    error,
+    label,
+    name,
+    placeholder,
+    required,
+    disabled,
+    id,
+    ...rest
+  },
   ref,
 ) {
   return (
@@ -73,6 +92,7 @@ export const TextField = forwardRef<HTMLInputElement, Props>(function TextField(
         type={type}
         name={name}
         placeholder={placeholder}
+        {...rest}
       />
       <ErrorText>{error}</ErrorText>
     </div>
