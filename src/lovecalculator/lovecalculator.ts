@@ -2,18 +2,27 @@ export type LoveFN = (params: { name: string }) => number;
 
 const loveFuncs: LoveFN[] = [];
 
-const clamp = function(min: number, max: number, value: number): number {
-  return Math.min(Math.max(value, min), max);
-}
+const clamp = (params: { min: number; max: number; value: number }): number =>
+  Math.min(Math.max(params.value, params.min), params.max);
 
-export const lovecalculator = (params: { name: string }): {
+export const lovecalculator = (params: {
+  name: string;
+  funcs?: LoveFN[];
+}): {
   lovePercentage: number;
 } => {
   let totalLoveCount = 0;
+  const loveFunctions = params.funcs || loveFuncs;
 
-  for (const loveFunc of loveFuncs) {
-    const loveCount = loveFunc({ name: params.name });
-    totalLoveCount = totalLoveCount + clamp(0, 100, loveCount);
+  for (const loveFunction of loveFunctions) {
+    const loveCount = loveFunction({ name: params.name });
+    const loveValue = clamp({
+      min: 0,
+      max: 100,
+      value: loveCount,
+    });
+
+    totalLoveCount = totalLoveCount + loveValue;
   }
 
   return {
