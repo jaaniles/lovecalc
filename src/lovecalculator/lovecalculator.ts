@@ -1,4 +1,4 @@
-import { loveModulo } from "~/lovecalculator/loveModulo";
+import { loveModulo } from "./loveModulo";
 
 export type LoveFN = (params: { name: string }) => number;
 
