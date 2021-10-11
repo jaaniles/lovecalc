@@ -1,4 +1,4 @@
-type LoveFN = (params: { name: string }) => number;
+export type LoveFN = (params: { name: string }) => number;
 
 const loveFuncs: LoveFN[] = [];
 
