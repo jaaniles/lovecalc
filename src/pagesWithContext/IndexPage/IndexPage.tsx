@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import React, { FC, useState } from "react";
 import CountUp from "react-countup";
 
@@ -13,6 +14,7 @@ import { lovecalculator } from "~/lovecalculator/lovecalculator";
 export const IndexPage: FC = () => {
   const [name, setName] = useState("");
   const [love, setLove] = useState(0);
+  const [isCalculated, setIsCalculated] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setName(e.target.value);
@@ -21,6 +23,8 @@ export const IndexPage: FC = () => {
   const handleSubmit = () => {
     const calculation = lovecalculator({ name });
     setLove(calculation.lovePercentage);
+
+    setIsCalculated(true);
   };
 
   return (
@@ -32,8 +36,24 @@ export const IndexPage: FC = () => {
       </Column>
       <Column center alignCenter>
         <H1>
-          <CountUp start={0} end={love} duration={3} />%
+          <CountUp start={0} end={love} duration={5} />%
         </H1>
+        <motion.img
+          initial="initial"
+          animate={isCalculated ? "animate" : "initial"}
+          variants={{
+            initial: {
+              scale: 0,
+            },
+            animate: {
+              scale: 1,
+              transition: {
+                duration: 5,
+              },
+            },
+          }}
+          src={logo}
+        />
         <H3>{`${name} <3 Fraktio`}</H3>
       </Column>
     </PageContent>
