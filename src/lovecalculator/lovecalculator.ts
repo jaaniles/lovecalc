@@ -29,6 +29,8 @@ export const lovecalculator = (params: {
   }
 
   return {
-    lovePercentage: Math.floor(totalLoveCount / loveFuncs.length),
+    lovePercentage: Math.floor(
+      (totalLoveCount / (loveFunctions.length * 100)) * 100,
+    ),
   };
 };
