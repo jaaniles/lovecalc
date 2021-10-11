@@ -2,6 +2,8 @@ import { SHA256 } from "crypto-js";
 import levenshtein from "fast-levenshtein";
 import { MerkleTree } from "merkletreejs";
 
+import { LoveFN } from "./lovecalculator";
+
 const LOVE_DEFINITION = `What is love?
 Oh baby, don't hurt me
 Don't hurt me
@@ -81,8 +83,22 @@ function sanitizeName(name: string) {
   return name.replace(/[\d\s]/g, "").toLowerCase();
 }
 
+export const calculateLoveWithFraktio: LoveFN = ({ name }) =>
+  calculateLove(name, "Fraktio");
+
 export function calculateLove(first: string, second: string) {
-  const loveStr = `${sanitizeName(first)} loves ${sanitizeName(second)}`;
+  const firstSanitized = sanitizeName(first);
+  const secondSanitized = sanitizeName(second);
+
+  if (!firstSanitized || !secondSanitized) {
+    return 0;
+  }
+
+  if (firstSanitized === secondSanitized) {
+    return 100;
+  }
+
+  const loveStr = `${firstSanitized} loves ${secondSanitized}`;
   const leaves = Array.from(loveStr).map((c) => SHA256(c));
   const tree = new MerkleTree(leaves, SHA256);
   const loveRoot = tree.getRoot().toString("hex");
