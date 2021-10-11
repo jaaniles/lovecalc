@@ -1,14 +1,14 @@
 import React, { FC, useState } from "react";
 import CountUp from "react-countup";
 
+import logo from "~/assets/svgs/fraktio-logo_white_bw.svg";
 import { Button } from "~/atoms/Button";
 import { Column } from "~/atoms/Column";
 import { PageContent } from "~/atoms/PageContent";
-import { Row } from "~/atoms/Row";
 import { TextField } from "~/atoms/TextField";
 import { H1 } from "~/atoms/typography/H1";
 import { H3 } from "~/atoms/typography/H3";
-import { calculateLove } from "~/lovecalculator/levenshtein";
+import { lovecalculator } from "~/lovecalculator/lovecalculator";
 
 export const IndexPage: FC = () => {
   const [name, setName] = useState("");
@@ -19,24 +19,23 @@ export const IndexPage: FC = () => {
   };
 
   const handleSubmit = () => {
-    const perc = calculateLove(name, "Fraktio");
-    setLove(perc);
+    const calculation = lovecalculator({ name });
+    setLove(calculation.lovePercentage);
   };
 
   return (
     <PageContent>
-      <Row>
-        <Column alignCenter>
-          <H3>LASKE RAKKAUDEN YHTEENSOPIVUUS FRAKTION KANSSA</H3>
-          <TextField onChange={handleChange} id="name" />
-          <Button onClick={handleSubmit}>LASKE RAKKAUS</Button>
-        </Column>
-        <Column>
-          <H1>
-            <CountUp start={0} end={love} duration={5} />
-          </H1>
-        </Column>
-      </Row>
+      <Column alignCenter center>
+        <H3>LASKE RAKKAUDEN YHTEENSOPIVUUS FRAKTION KANSSA</H3>
+        <TextField onChange={handleChange} id="name" />
+        <Button onClick={handleSubmit}>LASKE RAKKAUS</Button>
+      </Column>
+      <Column center alignCenter>
+        <H1>
+          <CountUp start={0} end={love} duration={3} />%
+        </H1>
+        <H3>{`${name} <3 Fraktio`}</H3>
+      </Column>
     </PageContent>
   );
 };

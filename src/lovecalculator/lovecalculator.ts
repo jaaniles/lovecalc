@@ -1,4 +1,5 @@
 import { calculateLoveWithFraktio } from "./levenshtein";
+import { loveLetterMatch } from "./loveLetterMatch";
 import { loveModulo } from "./loveModulo";
 import { loveVowel } from "./loveVowel";
 import { peppesLoveFn } from "./peppesLoveFn";
@@ -10,6 +11,7 @@ const loveFuncs: LoveFN[] = [
   calculateLoveWithFraktio,
   loveVowel,
   peppesLoveFn,
+  loveLetterMatch,
 ];
 
 const clamp = (params: { min: number; max: number; value: number }): number =>

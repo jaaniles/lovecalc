@@ -27,6 +27,7 @@
     "emotion-reset": "^3.0.0",
     "facepaint": "^1.2.1",
     "fast-levenshtein": "^3.0.0",
+    "framer-motion": "^4.1.17",
     "get-user-locale": "^1.4.0",
     "imagemin-mozjpeg": "^9.0.0",
     "imagemin-svgo": "^8.0.0",
