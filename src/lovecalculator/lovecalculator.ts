@@ -1,6 +1,8 @@
+import { loveModulo } from "~/lovecalculator/loveModulo";
+
 export type LoveFN = (params: { name: string }) => number;
 
-const loveFuncs: LoveFN[] = [];
+const loveFuncs: LoveFN[] = [loveModulo];
 
 const clamp = (params: { min: number; max: number; value: number }): number =>
   Math.min(Math.max(params.value, params.min), params.max);
